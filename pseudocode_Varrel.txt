@@ -1,0 +1,25 @@
+DECLARE buatTugas with true
+DECLARE semuaTugas with []
+
+PROCEDURE tambahTugas(tugas)
+    ADD to semuaTugas with tugas
+    PRINT "Berhasil menambahkan tugas"
+END PROCEDURE
+
+WHILE buatTugas = true
+  DO
+  INPUT jumlahTugas
+  DECLARE namaTugas
+  INPUT namaTugas
+  CALL tambahTugas("tugas baru")
+  
+  DECLARE tambahTugasLagi with boolean
+  INPUT tambahTugasLagi 
+  IF tambahTugasLagi = "yes"
+    buatTugas = true
+  ELSE
+    buatTugas = false
+  END IF
+END WHILE
+
+PRINT "Semua tugas berhasil disimpan"
